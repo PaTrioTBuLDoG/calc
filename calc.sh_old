@@ -1,0 +1,18 @@
+#!/bin/bash
+#calc.sh
+
+if [ -n "$1" ] && [ -f "$1" ]; then
+    RES_1=$((`head -n1 $1`))
+else
+    echo "Enter path to two files with expression"
+fi
+if [ -n "$2" ] && [ -f "$2" ]; then
+    RES_2=$((`head -n1 $2`))
+else
+    echo "Enter path to file with expression for second argument"
+fi
+if [ $RES_1 -gt $RES_2 ]; then
+    echo $RES_1
+else
+    echo $RES_2
+fi
